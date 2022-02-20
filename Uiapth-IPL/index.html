@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="asset/css/style.css">
+        <title> Uipath REC</title>
+    </head>
+    <body>
+        <script src="asset/js/index.js"></script>
+        <h1> Employee Onboarding Form </h1>
+    <div class="main-block">
+    <form action="/" autocomplete="off">
+      <button onclick="ResetAlert()" type="submit" href="/">New Registration</button>
+
+        
+          <h3>Personal Details</h3>
+       
+        <div  class="account-details">
+		  <div><label>Employee Id*</label><input type="text" name="name" id="EmployeeId" readonly placeholder="Employee Id will appear here "></div>
+		  <div><label>Official Mail Id*</label><input type="text" name="name" id="EmployeeEmail" readonly placeholder="Employee Email Id will appear here"></div>
+          <div><label>First Name*</label><input type="text" name="name" id="fname" required></div>
+          <div><label>Last Name*</label><input type="text" name="name" id="lname" required></div>
+          <div><label>DOJ*</label><input type="text" name="name"id="dob" id="dob" required></div>
+		  <div><label>Designation*</label><input type="text" name="name" id="designation" required></div>
+		  <div>
+		  <label>Gender*</label>
+              <div class="gender">
+                <input type="radio" value="none" id="male" name="gender" required/>
+                <label for="male" class="radio">Male</label>
+                <input type="radio" value="none" id="female" name="gender" required/>
+                <label for="female" class="radio">Female</label>
+              </div>
+		  </div>
+        </div>
+      
+            
+  
+          <h3>Terms and Mailing</h3>
+        
+        <div  class="terms-mailing">
+          <div class="checkbox">
+            <input required type="checkbox" name="checkbox"><span>I accept the "Privacy Policy for Uipath.</span>
+          </div>
+          
+      </fieldset>
+      <button onclick="myalert()" type="submit" href="https://iplweb-8cf1a.web.app/">Submit</button>
+    </form>
+    </div> 
+	
+	
+	
+	<script> 
+        function myalert() { 
+            
+			document.getElementById("EmployeeId").value = Math.floor((Math.random() * 999) + 100);
+			document.getElementById("EmployeeEmail").value = document.getElementById("fname").value+"."+document.getElementById("lname").value+"@uipathrec.com";
+			document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+			document.getElementById("dob").value = "";
+			document.getElementById("designation").value = "";
+        } 
+		
+		function ResetAlert() { 
+            
+			document.getElementById("EmployeeId").value = '';
+			document.getElementById("EmployeeEmail").value = '';
+        } 
+    </script> 
+	  <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBLjcGsSxD3xigH1RyAe0H8Lf4pvynMGcA",
+        authDomain: "iplweb-8cf1a.firebaseapp.com",
+        projectId: "iplweb-8cf1a",
+        storageBucket: "iplweb-8cf1a.appspot.com",
+        messagingSenderId: "123083878314",
+        appId: "1:123083878314:web:2bdc9b96b3c6b5041685d3"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+    </body>
+</html>
